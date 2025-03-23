@@ -149,7 +149,7 @@ class AudioPlayerUI:
 
         # Основной макет
         self.layout = urwid.Frame(
-            header=urwid.AttrMap(urwid.Text(f" Аудиопроигрыватель OpenUMP версия 1.0 | {self.directory}", align='center'), 'header'),
+            header=urwid.AttrMap(urwid.Text(f" Аудиопроигрыватель OpenUMP версия 1.1 | {self.directory}", align='center'), 'header'),
             body=urwid.AttrMap(self.file_list, 'body'),
             footer=urwid.Pile([
                 urwid.AttrMap(controls, 'button'),
@@ -170,6 +170,8 @@ class AudioPlayerUI:
         
         if self.player.current_file:
             status.append(f"Файл: {os.path.basename(self.player.current_file)}")
+
+        status.append(f"Громкость: {int(self.player.volume * 100)}%")
         
         self.status.set_text(('header', f" Статус: {' | '.join(status)} "))
 
@@ -239,6 +241,11 @@ class AudioPlayerUI:
             self.on_repeat(None)
         elif key in ('m', 'M', 'ь', 'Ь'):  # Перемешка по клавише M
             self.on_shuffle(None)
+        elif key in ('z', 'Z', 'я', 'Я'):
+            self.on_volume_up(None)
+        elif key in ('x', 'X', 'ч', 'Ч'):
+            self.on_volume_down(None)
+            
 
 if __name__ == "__main__":
     # Получаем путь к папке из аргументов командной строки
