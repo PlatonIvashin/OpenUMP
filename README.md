@@ -1,5 +1,5 @@
 # OpenUMP
-OpenUMP/Open Universal Music Player - аудиопроигрыватель, работающий без графического интерфейса (GUI)
+OpenUMP/Open Universal Music Player - аудиопроигрыватель, работающий без графического интерфейса (GUI), созданный на кроссплатформенном языке программирования Python 3
 
 # Скриншоты
 ![image](https://github.com/user-attachments/assets/decd7c33-c4fa-4c14-b392-e46fa233182e)
